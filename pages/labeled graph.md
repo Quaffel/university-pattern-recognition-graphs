@@ -1,0 +1,66 @@
+- label alphabet
+	- A label alphabet is a finite or infinite set for either nodes or edges. The values of the alphabet are assigned to vertices and edges
+	- assignment is expressed through
+		- $\mu: V \rightarrow L_V$ (node labeling function)
+		- $\nu: E \rightarrow L_E$ (edge labeling function)
+	- label alphabets may contain "null" label $\varepsilon$
+- definition
+	- Let $L_V$ and $L_E$ be finite or infinite label sets (so-called label alphabets) for nodes and edges, respectively. A graph $g$ is a four-tuple $g = (V, E , \mu, \nu)$ where ...
+	- if labeling is not relevant in a given context, one may also write $g = (V, E)$
+		- graphs are sometimes referred to as _purely structural graphs_
+		- special case of labelled graphs where empty label is assigned to all vertices and edges, i.e., $L_V = L_E = \{\emptyset\}$
+	- domain of all possible graphs (over label alphabets $L_V$ and $L_E$) is denoted by $G$
+- edges
+	- edges are generally directed
+	- average degree
+		- $\overline{deg}(g) = \frac{1}{n} \sum_{i = 1}^{n} deg(u_i) = \frac{2m}{n}$
+		- follows from handshaking theorem
+		- identical for directed and undirected graphs
+	- average in- and out-degrees
+		- $\overline{in}(g) = \overline{out}(g) = \frac{1}{n} \sum_{i = 1}^n in(u_i) = \frac{m}{n}$
+	- density
+		- measure of relative number of edges in a graph
+			- ratio of number of present edges and the maximum possible number of edges
+		- undirected graph: $\delta(g) = \frac{2m}{n (n - 1)}$
+		- directed graph: $\delta(g) = \frac{m}{n (n - 1)}$
+		- we define $\delta(g) = 0$ for $n \in \{0, 1\}$
+		- graph with $\delta(g) = 1$ is said to be complete
+- size
+	- size of graph is defined to be the size of the vertex set
+- adjacence
+	- two nodes $u, v$ connected by an edge $(u, v)$ are referred to as _adjacent_ ($u \sim v$)
+		- $u$ is said to be a neighbor of $v$, and vice versa
+	- set of neighbors of a vertex $v$ is called neighborhood of $v$ and denoted as $\mathcal{N}(v)$
+- subgraph
+	- Let $g_1 = (V_1, E_1, \mu_1, \nu_1)$ and $g_2 = (V_2, E_2, \mu_2, \nu_2)$ be graphs. Graph $g_1$ is a subgraph of $g_2$, denoted by $g_1 \subseteq g_2$, if
+		- $V_1 \subseteq V_2$
+		- $E_1 \subseteq E_2$
+		- $\mu_1(u) = \mu_2(u)$ for all $u \in V_1$
+		- $\nu_1(u) = \nu_2(u)$ for all $e \in E_1$
+	- $g_1$ is said to be an induced subgraph of $g_2$ (more specifically: $g_1$ is subgraph of $g_2$ induced by $V_1$) if it holds that $E_1 = E_2 \cap (V_1 \times V_1)$
+- traversal
+	- walk: sequence of nodes $u_0 u_1 \dots u_k$ such that $u_{i - 1} \sim u_i$ for all $i = 1, \dots, k$
+		- length of walk is $k$
+	- cycle: walk where $u_0 = u_k$
+	- path: walk with distinct nodes ($u_i \neq u_j$ for all $i, j = 0, \dots, k$ with $i \neq j$)
+- variants
+	- simple
+		- graph does not contain loops and multiple edges
+	- undirected
+		- undirected edges are modeled by inserting a reverse directed edge $(v, u) \in E$ for every edge $(u, v) \in E$ with identical label (i.e., $\nu(u, v) = \nu(v, u)$)
+		- original edge and its respective reverse edge are jointly counted once
+	- weighted graphs
+	- label alphabets are restricted to $L_V = \{\emptyset\}$ and $L_E = \mathbb{R}$
+	- graphs with unique node labels
+		- formally: $\mu(u) \neq \mu(v)$ for all $u, v \in V$ with $u \neq v$
+	- valence graph
+		- degree of all vertices is bounded by or fixed to a given value
+		- referred to as bounded-valence graph or fixed-valence graph accordingly
+	- planar graph
+		- graphs can be drawn on the plane such that they don't intersect
+	- tree
+		- directed acyclic,connected graph such that every node has zero or more children nodes and at most one parent node
+	- ordered graph
+		- directed graph with a topologically sorted node set $V$. A topological ordering of the nodes means that for every directed edge $(u, v) \in E$, $u$ is sorted before $v$ in $V$
+	- string
+		- linear, directed graph in which each node represents one character, and consecutvie characters are connected by a directed edge

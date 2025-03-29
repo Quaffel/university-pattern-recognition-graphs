@@ -1,0 +1,5 @@
+- motivation
+	- [[random walk graph kernel]]s or rather the underlying [[direct product graph]]s only consider pairs of vertices in $g$ and $g'$ with identical label
+		- vertices with similar but unequal labels are not considered
+	- problematic when dealing with continuous label values
+- similar to [[random walk graph kernel]] but uses [[modified direct product graph]]s rather than regular [[direct product graph]]s

@@ -1,0 +1,25 @@
+- similarity measures
+	- graph edit distance
+		- measure of required distortion to transform one graph into another
+			- can be applied to any two graphs
+			- analogous to levenshtein distance
+	- tree edit distance
+		- more efficient to compute
+	- spectral analysis
+		- eigen decomposition of adjacency (and some other) matrix
+- graph embedding
+	- scalar embeddings: polarity number, wiener index
+	- spectral embedding
+- graph kernels
+	- original way: first calculate embedding, then calculate dot product
+	- kernel machine is a shortcut to perform both operations at once ("operator fusion")
+	- many problems can be reformulated in terms of dot products
+		- for example: Support Vector Machines
+		- allows application of those methods to graphs as well
+- graph clustering
+	- find strongly connected subgraphs within a larger graph, which is only loosely connected to the rest of the graph
+- graph neural networks
+	- how to pass graphs to neural network? ("interface" of neural networks doesn't match)
+		- use of graph-specific convolutions
+	- can be used to learn graph embeddings
+- frequent subgraph and motif detection

@@ -1,0 +1,21 @@
+- pattern recognition tasks on graphs
+	- graph level
+		- graph classification: predict a discrete or continuous property of an entire graph
+			- application: predict molecule property
+		- graph generation: generating new graphs from existing graphs
+			- application: generate new molecules
+	- subgraph level
+		- frequent subgraph detection
+			- application: pattern in ASTs
+		- community detection (node clustering): identify group of densely interconnected nodes within a graph
+			- application: social communities in social networks
+	- node level
+		- node classification: predict a discrete or continuous property of a node (based on the graph's properties, notably the node's neighborhood)
+			- application: categorize transaction nodes in payment network
+		- node embedding
+			- application: downstream machine learning tasks
+		- centrality computation: find important nodes in graph
+			- application: influential hubs in traffic networks
+	- edge level
+		- link prediction: predict the existence (and properties) of a relationship between nodes
+			- application: fill in gaps in knowledge graph

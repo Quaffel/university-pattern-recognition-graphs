@@ -1,0 +1,20 @@
+- commonly used to establish identity of any two graphs
+	- vertices in graphs don't have an inherent order, which is why vertex-indexed graph representations (e.g., degree matrix, adjacency matrix, Laplacian matrix) can be arbitrarily permuted
+	- isomorphic graphs are identical in structure and labels
+- definition
+	- Let $g_1 = (V_1, E_1, \mu_1, \nu_1)$ and $g_2 = (V_2, E_2, \mu_2 \nu_2)$ be two graphs. A _graph isomorphism_ is a bijective function $f: V_1 \rightarrow V_2$ satisfying
+		- $\mu_1(u) = \mu_2(f(u))$ for all nodes $u \in V_1$
+		- for each edge $e_1 = (u, v) \in E_1$, there exists an edge $e_2 = (f(u), f(v)) \in E_2$ such that $\nu(e_1) = \nu_2(e_2)$
+		- for each edge $e_2 = (u, v) \in E_2$, there exists an edge $e_1 = (f^{-1}(u), f^{-1}(v)) \in E_1$ such that $\nu(e_1) = \nu_2(e_2)$
+	- Two graphs $g_1, g_2$ are called isomorphic if there exists an isomorphism between them, and we write $g_1 \cong g_2$
+- relation of graph isomorphism is an equivalence relation (satisfies reflexivity, symmetry, and transitivity)
+- recognition algorithms
+	- worst case: exponential in the number of vertices of the two graphs
+		- not encountered often in practice
+		- practical applications may significantly reduce search time by using label information
+	- polynomial algorithms exists for certain graph classes
+		- trees
+		- ordered graphs
+		- bounded-valence graphs
+		- graphs with unique node labels
+	- [[Weisfeiler-Lehman isomorphism test]]

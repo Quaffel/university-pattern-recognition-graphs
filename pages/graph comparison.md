@@ -1,0 +1,2 @@
+- definition: Given two graphs $g_1, g_2 \in G$, the graph comparison problem is to find a function $d: G \times G \rightarrow \mathbb{R}$ such that $d(g_1, g_2)$ quantifies the dissimilarity/distance of $g_1$ and $g_2$
+- score is typically derived from common procedures for finding [[graph matching]]s

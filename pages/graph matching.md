@@ -1,0 +1,21 @@
+- process of evaluating (dis)similarity of two graphs
+	- find correspondence between nodes and edges (more generally: substructures) of two graphs that satisfies some constraints
+	- in other words: find mapping between common substructures of two graphs
+- not the same as [[graph comparison]] as graph matching yields matching (i.e., a mapping) and not a similarity measure
+- taxonomy
+	- by precision
+		- exact graph matching
+			- mapping between vertices of graphs that preserves edge structure and labeling
+			- variants
+				- constraints on edge structure must hold in one direction vs. must hold in both directions
+		- inexact graph matching (or error-tolerant graph matching)
+- pattern recognition techniques based on graph matchings
+	- [[k-nearest neighbor classifier]]
+- variants (from strictest to most relaxed)
+	- equality in structure and labels of two graphs: [[graph isomorphism]]
+	- equality in structure and labels of one graph with a subgraph: [[subgraph isomorphism]]
+	- equality in structure and labels of subgraphs of two graphs: [[maximum common subgraph]]
+- "error-tolerant variants"
+	- strictly speaking not variants of graph matching as they produce a distance measure, not a matching of structural elements
+	- [[graph edit distance]]
+	- [[spectral graph matching]]

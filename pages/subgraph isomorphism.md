@@ -1,0 +1,9 @@
+- commonly used to establish identity of one graph with a subgraph of some other larger graph
+- definition
+	- Let $g_1 = (V_1, E_1, \mu_1, \nu_1)$ and $g_2 = (V_2, E_2, \mu_2 \nu_2)$ be two graphs. A _subgraph isomorphism_ is an injective function $f: V_1 \rightarrow V_2$ if there exists a subgraph $g \subseteq g_2$ such that $f$ is a graph isomorphism between $g_1$ and $g$. In this case we write $g_1 \subseteq g_2$
+	- note that $f$ is injective and not bijective (as it is the case for [[graph isomorphism]]s, as $f$ is not necessarily surjective)
+	- subgraph needs to contain exactly (and not at most) $|V_1|$ vertices as the vertices of $g_1$ are always involved
+- recognition algorithms
+	- harder problem than detection of a graph isomorphism, as $g_1$ may be isomorphic to any of the subgraphs of $g_2$ of size $|V_1]$
+	- NP-complete problem
+	- [[tree-based subgraph isomorphism test]]

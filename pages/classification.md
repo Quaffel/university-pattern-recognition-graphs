@@ -1,0 +1,12 @@
+- generative vs. discriminative
+	- generative classification
+		- $\theta$ is based on estimated class-conditioned feature distribution
+		- allows to generate new samples (based on inferred distribution)
+			- typically relies on inference of probability density function
+	- discriminative classification
+		- $\theta$ is based on class boundaries
+		- may be more accurate if underlying distribution is hard to estimate
+- classification with rejection
+	- classification method is given the option to reject a classification in case of uncertainty
+		- e.g., threshold-based classification mechanisms may define a "rejection range", typically close to the original (discrimination) threshold
+-

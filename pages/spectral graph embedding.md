@@ -1,0 +1,64 @@
+- build vector using features derived from the eigenvalue decomposition of a graph's adjacency matrix
+	- typically based on truncated modal matrix to overcome correspondence problem (cf. [[eigendecomposition of matrix]])
+	- LATER Would this also work with other graph representations (e.g., degree matrix)?
+- motivation
+	- adjacency matrices of two isomorphic graphs have very similar spectral features
+		- eigenvalues are identical
+		- eigenvectors as a whole retain their structure but individual coordinates of the eigenvectors may be permuted
+	- features combine eigenvectors in a way such that the order of the coordinates doesn't matter
+		- more formally: all presented features are invariant to permutations of the adjacency matrix
+	- hence: presented spectral embeddings are good similarity indicators for isomorphic graphs by definition
+	- empirical evidence shows that spectral embeddings deteriorate gracefully in many applications
+		- that is, they serve as a good similarity measure for nearly-isomorphic graphs and very dissimilar graphs as well
+		- not necessarily inherent to the concept of spectral embeddings
+- unary features
+	- leading eigenvalues
+		- vector constructed from the considered (i.e., largest $n$) eigenvalues of the adjacency matrix
+		- $\varphi(g) = (\lambda^1, \lambda^2, \dots, \lambda^n)$
+			- feature vector is ordered according to eigenmode indices, such that order is invariant to permutation
+	- eigenmode volumes
+		- vector constructed from the eigenmode volumes $\text{Vol}^i$ associated with the $n$ first eigenmodes
+		- $\text{Vol}^i = \sum_{v_j \in V} U(j, i) \bullet \text{deg}(v_j)$
+			- every volume corresponds to a single eigenvector
+			- eigenvector has one coordinate for every node in graph; here, we multiply every coordinate with the corresponding node
+				- if adjacency matrix is permuted, the coordinates of the eigenvector and the nodes are equally permuted
+				- eigenmode volume is invariant to permutation
+		- $\varphi(g) = (\text{Vol}^1, \text{Vol}^2, \dots, \text{Vol}^n)$
+			- feature vector is ordered according to eigenmode indices, such that order is invariant to permutation too
+- pairwise features
+	- inter-mode adjacency matrices
+		- based on inter-mode adjacency matrix
+			- $\Psi = U^T A U$
+				- projection of the adjacency matrix onto the basis spanned by the eigenvectors
+				- among other things, operation implies a change-of-basis of the adjacency matrix of $A$ according to $P$
+					- it holds that $A = P A' P^{-1}$
+					- as $A$ and $A'$ are similar matrices, $U$ and $U'$ are also related through $P$
+					- ensures invariance of embedding to permutation
+			- $\Psi(u, v) = \sum_{u_i \in V} \sum_{v_j \in V} U(i, u) U(j, v) A(i, j)$
+				- every cell represents complex component-wise combination of any two eigenvectors
+					- multiplies each coordinate of one eigenvector with all coordinates of the other
+				- result is identical if coordinates of both eigenvectors are equally permuted
+				- as $U$ is constructed by concatenating the eigenvectors in the order of the eigenmode indices, the resulting matrix should be identical for two permuted adjacency matrices
+		- $\varphi(g) = (\Psi(1, 1), \dots, \Psi(1, n), \Psi(2, 1), \dots, \Psi(2, n), \dots, \Psi(n, n))$
+			- flattens inter-mode adjacency matrix into a single vector by stacking matrix columns in eigenmode order
+	- inter-mode distances
+		- given two eigenmode indices, the inter-mode distance is defined as the length of the shortest path between the most significant nodes within the corresponding eigenvectors
+			- most significant node of an eigenvector is the one having the largest coefficient
+			- formally: For the eigenmode indexed $k$, the index $i$ of the most significant node $u_i \in V$ is 
+			  $$
+			  i^k = \argmax_j (U(j, k))
+			  $$
+			- formally: inter-mode distance between the most significant nodes with indices $i^q$ and $i^r$ of the eigenmode indexed $q$ and $r$ is
+			  $$
+			  d_{q, r} = d_{\min}(u_{i^q}, v_{i^r})
+			  $$
+		- $\varphi(g) = (d_{1, 1}, d_{1, 2}, \dots, d_{1, n}, d_{2, 1}, \dots, d_{2, n}, \dots, d_{n, n})$
+			- vector is constructed from all pairs of the most significant nodes
+				- think of an $n \times n$ matrix which is then flattened
+			- can be limited to the $n$ leading eigenvectors
+- composed embeddings
+	- multiple embeddings can be concatenated
+- compression
+	- individual and especially composed embeddings can be of high dimensionality
+	- can be reduced using dimension reduction techniques
+		- e.g., multidimensional scaling (MDS)

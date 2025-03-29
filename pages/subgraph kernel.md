@@ -1,0 +1,7 @@
+- common subgraph isomorphism (CSI) kernel
+	- counts the number of isomorphisms between subgraphs of $g_1$ and $g_2$
+	- set of nodes forms a clique in association graph if there is a corresponding common subgraph isomorphism
+		- counting all cliques in association graph yields number of common subgraph isomorphisms
+- alternative kernels
+	- count number of isomorphic subgraphs
+		- not identical to CSI: there might be more than one isomorphism between a pair of isomorphic subgraphs

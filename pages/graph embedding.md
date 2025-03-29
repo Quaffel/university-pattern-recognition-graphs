@@ -1,0 +1,8 @@
+- A graph embedding $\varphi : \mathcal{G} \rightarrow \mathbb{R}^n$ maps graphs from arbitrary graph domains to a real vector space
+	- allows application of operators proper to real vector spaces on graphs (or rather graph maps $\varphi(g) \in \mathbb{R}^n$)
+	- spans gap between structural and statistical [[pattern recognition]]
+- variants
+	- [[topological graph embedding]]
+	- [[spectral graph embedding]]
+	- [[dissimilarity-based graph embedding]]
+-

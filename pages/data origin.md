@@ -1,0 +1,8 @@
+- distinction can be made based on whether the data is meaningful on its own/self-contained or whether it is a representation of a real entity
+	- sensory data
+		- captures representation of real entity from the environment; incomplete representation
+		- e.g., image, video, audio, location
+	- born-digital data
+		- data of digital origin (created digitally)
+		- representation is meaningful on its own; complete representation
+		- e.g., text, network traffic

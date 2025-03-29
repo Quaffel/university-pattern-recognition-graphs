@@ -1,0 +1,14 @@
+- can be thought of as a "kernel framework"
+	- operates on two graphs
+	- graphs are decomposed into substructures and kernel is evaluated on each pair of those substructures
+	- convolution operation is used to turn pair-wise similarities into a kernel on the complete graphs
+- variants
+	- [[random walk graph kernel]]
+		- [[modified random walk graph kernel]]
+	- [[path kernel]]
+		- [[all-paths graph kernel]]
+		- [[shortest path graph kernel]]
+	- [[subtree kernel]]
+		- [[Weisfeiler-Lehman subtree kernel]]
+	- frameworks
+		- [[Weisfeiler-Lehman kernel]]
