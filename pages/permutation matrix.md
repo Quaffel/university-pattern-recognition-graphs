@@ -1,0 +1,4 @@
+- identity matrices with either permuted rows or columns
+	- permutes rows if pre-multiplied ($PA$)
+	- permutes columns if post-multiplied ($AP$)
+- a permutation matrix is an [[orthonormal matrix]]
