@@ -5,6 +5,7 @@
 	- adjacency matrices of two isomorphic graphs have very similar spectral features
 		- eigenvalues are identical
 		- eigenvectors as a whole retain their structure but individual coordinates of the eigenvectors may be permuted
+		- holds because adjacency matrices of two isomorphic graphs are similar matrices (cf. [[matrix conjugation]])
 	- features combine eigenvectors in a way such that the order of the coordinates doesn't matter
 		- more formally: all presented features are invariant to permutations of the adjacency matrix
 	- hence: presented spectral embeddings are good similarity indicators for isomorphic graphs by definition
