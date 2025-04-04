@@ -21,9 +21,11 @@
 		  \end{cases}
 		  $$
 		- kernel function $\kappa_{\text{walk}^(1)}$ measures similarity of a walk of length 1
-			- approach: compute product of all nodes and edges encountered along the walk
+			- approach: compute product of kernel values of all nodes and edges encountered along the walk
 				- $\kappa_{\text{walk}^{(1)}} ((u, u'), (v, v')) = \kappa(u, u') \bullet \kappa((u, v), (u', v')) \bullet \kappa(v, v')$
 				- separate kernel function for nodes and edges
+			- approach: compute product of kernel kernel values of all nodes encountered along the walk (if no edge kernel is available)
+				- $\kappa_{\text{walk}^{(1)}} ((u, u'), (v, v')) = \kappa(u, u') \bullet \kappa(v, v')$
 	- can be interpreted as a fuzzy adjacency matrix indicating adjacency and similarity
 		- assigns higher adjacency values to nodes of the product graph if corresponding pairs of nodes and edges in $g$ and $g'$ are similar, and lower values otherwise
 - similar but not equal to [[direct product graph]]

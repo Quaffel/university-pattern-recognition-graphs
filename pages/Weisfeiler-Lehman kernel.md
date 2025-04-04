@@ -25,4 +25,7 @@
 	  where $h$ is the number of Weisfeiler-Lehman iterations and $g_0, \dots, g_h$ and $g_0', \dots, g_h'$ are the Weisfeiler-Lehman sequences of $g$ and $g'$, respectively.
 - properties
 	- positive definite (i.e., valid) if base kernel is positive definite
--
+- variants
+	- [[Weisfeiler-Lehman subtree kernel]]
+- further reading
+	- Weisfeiler-Lehman graph kernels ([paper](https://www.jmlr.org/papers/volume12/shervashidze11a/shervashidze11a.pdf))

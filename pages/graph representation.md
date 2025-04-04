@@ -22,30 +22,7 @@
 	  deg(v_i) &\text{ if } i = j \\
 	  0 &\text{ otherwise}
 	  \end{cases}$$
-- laplacian matrices
-	- $L = l(i, j) (i, j = 1, \dots, n)$
-	- derived from adjacency matrix and degree matrix
-	- have useful mathematical properties
-	- also known as laplacians
-	- variants
-		- unnormalized laplacian
-			- $L = D - A$
-			- $$l_{ij} = \begin{cases}
-			  deg(v_i) &\text{ if } i = j \\
-			  -1 &\text{ if } i \neq j \text{ and } (v_i, v_j) \in E\\
-			  0 &\text{ otherwise}
-			  \end{cases}$$
-		- symmetrically normalized laplacian matrix
-			- vertices with large degrees result in large diagonal entries in laplacian, which may dominate matrix properties
-			- normalization reduces this effect
-			- $L^{sym} = (D^+)^{1 /2} L(D^+)^{1 /2}$
-				- $D^+$ being the Moore-Penrose inverse (also known as pseudoinverse, even though concept of pseudoinverses is broader)
-			- $$l_{ij} = \begin{cases}
-			  1 &\text{ if } i = j \text{ and } deg(v_i) \neq 0\\
-			  \frac{-1}{\sqrt{deg(v_i) deg(v_j)}} &\text{ if } i \neq j \text{ and } (v_i, v_j) \in E\\
-			  0 &\text{ otherwise}
-			  \end{cases}$$
-			- either in- or out-degree can be used for normalization
+- [[laplacian matrix]]
 - adjacency list
 	- useful for sparse graphs
 		- graphs are sparse if they have a low density or (equivalently) that the average degree of the graph is much lower than the number of nodes in the graph
