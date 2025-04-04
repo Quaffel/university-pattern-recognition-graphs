@@ -1,0 +1,16 @@
+- motivation
+	- normalize by the expected number of common neighbors in the graph
+		- probabilistic approach
+- idea
+	- Suppose nodes $u_i$ and $u_j$ have degrees $\deg (u_i) = k_i$ and $\deg (u_j) = k_j$, respectively. How many common neighbors should we expect them to have?
+		- we randomly choose $k_i$ neighbors for $u_i$ and $k_j$ neighbors for $u_j$
+		- for every neighbor that we choose for $u_i$, we choose a neighbor of $u_j$ with probability $\frac{k_j}{N}$
+		- expected number of common neighbors is $k_i \bullet \frac{k_j}{N}$
+	- not directly to the expectation of a random variable (term "expectation" is avoided here)
+- properties
+	- value range
+		- between $-1$ and $1$
+		- coefficient of $0$ indicates that number of common neighbors of $u_i$ and $u_j$ matches the expectation
+		- negative coefficient indicates that the number of common neighbors of $u_i$ and $u_j$ is lower than the expectation
+		- positive coefficient indicates that the number of common neighbors of $u_i$ and $u_j$ is higher than the expectation
+		-

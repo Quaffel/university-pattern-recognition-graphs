@@ -1,0 +1,7 @@
+- based on a node's structural role in the graph
+- two nodes are considered _regularly equivalent_ if they have similar roles or relationships
+- neighborhood of two regularly equivalent nodes may be very dissimilar
+	- proximity and connectivity are not directly considered
+- measures
+	- [[SimRank]]
+	- [[Katz similarity]]

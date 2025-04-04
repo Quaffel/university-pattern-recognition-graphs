@@ -1,0 +1,4 @@
+- intuition
+	- nodes are similar if they are connected either by a few short paths or by many long ones
+	- weighted count of all paths between two nodes $u$ and $v$ of arbitrary length
+		- longer paths are assigned smaller weights than shorter ones

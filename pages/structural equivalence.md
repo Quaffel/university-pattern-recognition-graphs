@@ -1,0 +1,5 @@
+- based on a node's explicit relational properties
+- two nodes are considered structurally equivalent if they share many neighbors
+- measures
+	- [[cosine similarity]]
+	- [[Pearson coefficient]]

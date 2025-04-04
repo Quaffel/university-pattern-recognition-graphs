@@ -1,0 +1,10 @@
+- embeddings are functions that map elements of some family of objects to real vector spaces
+- applications
+	- allows application of operators proper to real vector spaces on those objects
+		- spans gap between structural and statistical [[pattern recognition]]
+	- can be used to reduce dimensionality of problem if family of objects is highly dimensional
+- vectors should be representative of original object
+	- representation should retain (select) properties
+- variants
+	- [[graph embedding]]
+	- [[node embedding]]
